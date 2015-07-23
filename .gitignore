@@ -11,3 +11,5 @@
 .ruby-gemset
 .rvmrc
 .rspec
+.pryrc
+

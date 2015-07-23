@@ -1,8 +1,18 @@
 # Pry::Memory
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/pry/memory`. To experiment with that code, run `bin/console` for an interactive prompt.
+A tiny gem for automated naming of stuff typed in the console:
 
-TODO: Delete this and the text above, and describe your gem
+```
+[1] pry(main)> a = > 1
+=> 1
+[2] pry(main)> b = > 2
+=> 2
+[3] pry(main)> c = > 3
+=> 3
+[4] pry(main)> d = > a + b + c
+=> 6
+[5] pry(main)> e = >
+```
 
 ## Installation
 
@@ -22,7 +32,41 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This gem will be automatically required with `require 'pry'` once you put into your Gemfile.
+
+### Configuration
+
+Put this to your `.pryrc` file (bundler is not available in `.pryrc`, so we have to require the gem manually):
+``` ruby
+require 'pry/memory'
+Pry::Memory.start(:abc)
+```
+
+And run `pry`.
+
+### Customization
+
+`:abc` is a stupid name of strategy that generates lower case letter (a,b,c,...).
+Also this gem has pre-defined strategy `:a1a2` that generates (a1,a2,a3,...):
+```
+[1] pry(main)> a1 = > 1
+=> 1
+[2] pry(main)> a2 = > 2
+=> 2
+[3] pry(main)> a3 = > 3
+=> 3
+[4] pry(main)> a4 = > a1 + a2 + a3
+```
+
+You can write your own strategy:
+``` ruby
+Pry::Memory.start do |counter|
+  # generate a variable name here
+  # you can use counter here, but it's not necessary at all
+  # in fact, you can generate a random letters here
+  # or even random words :)
+end
+```
 
 ## Development
 
