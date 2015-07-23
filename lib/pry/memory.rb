@@ -1,7 +1,4 @@
 require "pry/memory/version"
 
-module Pry
-  module Memory
-    # Your code goes here...
-  end
+module Pry::Memory
 end
