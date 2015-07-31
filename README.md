@@ -46,8 +46,8 @@ And run `pry`.
 
 ### Customization
 
-`:abc` is a stupid name of strategy that generates lower case letter (a,b,c,...).
-Also this gem has pre-defined strategy `:a1a2` that generates (a1,a2,a3,...):
+`:abc` is a stupid name of strategy that generates lower case letters (a,b,c,...).
+Also the gem has a pre-defined strategy `:a1a2` that generates (a1,a2,a3,...):
 ```
 [1] pry(main)> a1 = > 1
 => 1
@@ -58,6 +58,8 @@ Also this gem has pre-defined strategy `:a1a2` that generates (a1,a2,a3,...):
 [4] pry(main)> a4 = > a1 + a2 + a3
 ```
 
+(Activate it by writting `Pry::Memory.start(:a1a2)`)
+
 You can write your own strategy:
 ``` ruby
 Pry::Memory.start do |counter|
@@ -67,6 +69,9 @@ Pry::Memory.start do |counter|
   # or even random words :)
 end
 ```
+
+If you still don't get what's going in this section,
+check out [this file](https://github.com/iliabylich/pry-memory/blob/master/lib/pry/memory/generators.rb#L39)
 
 ## Development
 
