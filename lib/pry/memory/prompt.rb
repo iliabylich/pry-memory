@@ -1,3 +1,11 @@
+# Class responsible for replacing default prompt
+#
+# @example
+#   Pry::Memory::Prompt.replace
+#   # => prompt replaced
+#   Pry::Memory::Prompt.restore
+#   # => prompt restopred to the previous one
+#
 module Pry::Memory::Prompt
   extend self
 

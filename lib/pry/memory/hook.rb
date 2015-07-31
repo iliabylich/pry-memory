@@ -1,3 +1,11 @@
+# Class responsible for adding hook to pry
+#
+# @example
+#   Pry::Memory::Hook.register
+#   # hook registered
+#   Pry::Memory::Hook.unregister
+#   # hook unregister
+#
 module Pry::Memory::Hook
   extend self
 

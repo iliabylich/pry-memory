@@ -1,3 +1,13 @@
+# Class responsible for generating
+#  variable names
+#
+# @example
+#   Pry::Memory::Strategy.variable_name
+#   # => 'a'
+#   Pry::Memory::Strategy.next!
+#   Pry::Memory::Strategy.variable_name
+#   # => 'b'
+#
 module Pry::Memory::Strategy
   extend self
 
